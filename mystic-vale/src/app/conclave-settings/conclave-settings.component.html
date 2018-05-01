@@ -8,9 +8,10 @@
           <option value="8">8 Conclaves</option>
         </select>
         <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">Generate</button>
+          <button class="btn btn-outline-secondary" type="button" (click)="onGenerate()">Generate</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+<app-conclave-selection #conclaveSelection></app-conclave-selection>

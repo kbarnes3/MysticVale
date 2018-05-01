@@ -12,4 +12,10 @@ export class ConclaveSelectionComponent implements OnInit {
   ngOnInit() {
   }
 
+  numberOfConclaves: number;
+
+  generateListOfConclaves(numberOfConclaves: number) {
+    this.numberOfConclaves = numberOfConclaves;
+  }
+
 }
