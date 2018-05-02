@@ -7,8 +7,16 @@ export class ConclaveService {
 
   constructor() { }
 
+
   generateConclaveSelection(numberOfConclaves: number): Conclave[] {
-    
+    let pickedConclaves: Conclave[] = [];
+    let requiredConclaves: Conclave[] = Object.assign([], REQUIRED_CONCLAVES);
+
+    // Pick 2 of the required conclaves
+    for (let i = 0; i < 2; i++) {
+      let conclave: Conclave = requiredConclaves[randNumber(requiredConclaves.length)];
+    }
+
     return [];
   }
 
