@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ConclaveSettingsComponent } from './conclave-settings/conclave-settings.component';
 import { ConclaveSelectionComponent } from './conclave-selection/conclave-selection.component';
+import { ConclaveService } from './conclave.service';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ConclaveSelectionComponent } from './conclave-selection/conclave-select
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ConclaveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
