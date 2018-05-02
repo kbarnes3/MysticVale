@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConclaveService } from "../conclave.service";
 
 @Component({
   selector: 'app-conclave-selection',
@@ -7,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConclaveSelectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private conclaveService: ConclaveService) { }
 
   ngOnInit() {
   }
 
-  numberOfConclaves: number;
-
   generateListOfConclaves(numberOfConclaves: number) {
-    this.numberOfConclaves = numberOfConclaves;
+    conclaveSelection = this.conclaveService.generateConclaveSelection(numberOfConclaves);
   }
 
 }
