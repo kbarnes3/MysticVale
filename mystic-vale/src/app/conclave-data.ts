@@ -1,5 +1,7 @@
 import { Conclave } from './conclave';
 
+export const NUMBER_OF_REQUIRED_CONCLAVES: number = 2;
+
 export const REQUIRED_CONCLAVES: Conclave[] = [
   { name: 'Basic 1' },
   { name: 'Basic 2' },

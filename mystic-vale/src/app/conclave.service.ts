@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Conclave} from './conclave';
-import { REQUIRED_CONCLAVES, EXTRA_CONCLAVES } from './conclave-data';
+import { NUMBER_OF_REQUIRED_CONCLAVES, REQUIRED_CONCLAVES, EXTRA_CONCLAVES } from './conclave-data';
 
 @Injectable()
 export class ConclaveService {
@@ -15,15 +15,23 @@ export class ConclaveService {
 
   generateConclaveSelection(numberOfConclaves: number): Conclave[] {
     const pickedConclaves: Conclave[] = [];
-    const requiredConclaves: Conclave[] = Object.assign([], REQUIRED_CONCLAVES);
+    const remainingConclaves: Conclave[] = [].concat(REQUIRED_CONCLAVES);
 
-    // Pick 2 of the required conclaves
-    for (let i = 0; i < 2; i++) {
-      const pickedIndex: number = this.randNumber(requiredConclaves.length);
-      const conclave: Conclave = requiredConclaves[pickedIndex];
+    // Pick some of the required conclaves
+    for (let i = 0; i < NUMBER_OF_REQUIRED_CONCLAVES; i++) {
+      const pickedIndex: number = this.randNumber(remainingConclaves.length);
+      const conclave: Conclave = remainingConclaves[pickedIndex];
       pickedConclaves.push(conclave);
-      requiredConclaves.splice(pickedIndex, 1);
+      remainingConclaves.splice(pickedIndex, 1);
+    }
 
+    // Add in the rest of conclaves and continue picking
+    remainingConclaves.concat(EXTRA_CONCLAVES);
+    for (let i = 0; i < NUMBER_OF_REQUIRED_CONCLAVES; i++) {
+      const pickedIndex: number = this.randNumber(remainingConclaves.length);
+      const conclave: Conclave = remainingConclaves[pickedIndex];
+      pickedConclaves.push(conclave);
+      remainingConclaves.splice(pickedIndex, 1);
     }
 
     return pickedConclaves;
