@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Conclave} from "./conclave";
-import { REQUIRED_CONCLAVES, EXTRA_CONCLAVES } from "./conclave-data";
+import { Conclave} from './conclave';
+import { REQUIRED_CONCLAVES, EXTRA_CONCLAVES } from './conclave-data';
 
 @Injectable()
 export class ConclaveService {
@@ -14,13 +14,13 @@ export class ConclaveService {
 
 
   generateConclaveSelection(numberOfConclaves: number): Conclave[] {
-    let pickedConclaves: Conclave[] = [];
-    let requiredConclaves: Conclave[] = Object.assign([], REQUIRED_CONCLAVES);
+    const pickedConclaves: Conclave[] = [];
+    const requiredConclaves: Conclave[] = Object.assign([], REQUIRED_CONCLAVES);
 
     // Pick 2 of the required conclaves
     for (let i = 0; i < 2; i++) {
-      let pickedIndex: number = this.randNumber(requiredConclaves.length);
-      let conclave: Conclave = requiredConclaves[pickedIndex];
+      const pickedIndex: number = this.randNumber(requiredConclaves.length);
+      const conclave: Conclave = requiredConclaves[pickedIndex];
       pickedConclaves.push(conclave);
       requiredConclaves.splice(pickedIndex, 1);
 

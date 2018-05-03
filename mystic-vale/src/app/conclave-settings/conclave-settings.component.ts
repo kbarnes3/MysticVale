@@ -10,11 +10,11 @@ export class ConclaveSettingsComponent implements OnInit {
 
   constructor() { }
 
+  numberOfConclaves: number = 8;
+
   ngOnInit() {
     this.onGenerate();
   }
-
-  numberOfConclaves: number = 8;
 
   onGenerate(): void {
     this.conclaveList.generateListOfConclaves(this.numberOfConclaves);
