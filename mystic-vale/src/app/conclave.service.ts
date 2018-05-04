@@ -12,6 +12,15 @@ export class ConclaveService {
     return Math.floor(Math.random() * max);
   }
 
+  sortConclaves(a: Conclave, b: Conclave): number {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  }
 
   generateConclaveSelection(numberOfConclaves: number): Conclave[] {
     const pickedConclaves: Conclave[] = [];
@@ -34,6 +43,7 @@ export class ConclaveService {
       remainingConclaves.splice(pickedIndex, 1);
     }
 
+    pickedConclaves.sort(this.sortConclaves);
     return pickedConclaves;
   }
 

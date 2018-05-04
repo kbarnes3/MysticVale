@@ -3,9 +3,9 @@
     <div class="col-md-4 offset-md-4">
       <div class="input-group">
         <select class="custom-select" [(ngModel)]="numberOfConclaves" (ngModelChange)="onNumberChanged()">
-          <option value="6">6 Conclaves</option>
+          <option value="6">6 Conclaves (2-4 Players)</option>
           <option value="7">7 Conclaves</option>
-          <option value="8">8 Conclaves</option>
+          <option value="8">8 Conclaves (5-6 Players)</option>
         </select>
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" (click)="onGenerate()">Generate</button>
