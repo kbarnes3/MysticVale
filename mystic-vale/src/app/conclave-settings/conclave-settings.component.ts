@@ -16,6 +16,10 @@ export class ConclaveSettingsComponent implements OnInit {
     this.onGenerate();
   }
 
+  private onNumberChanged(): void {
+    this.onGenerate();
+  }
+
   onGenerate(): void {
     this.conclaveList.generateListOfConclaves(this.numberOfConclaves);
   }
