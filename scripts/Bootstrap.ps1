@@ -19,6 +19,8 @@ Push-Location $node_root
 
 Write-Status "Updating npm"
 & npm install -g npm $quiet
+Write-Status "Updating Angular CLI"
+& npm install -g @angular/cli $quiet
 Write-Status "Updating requirements"
 & npm install $quiet
 
