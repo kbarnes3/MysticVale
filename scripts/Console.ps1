@@ -24,16 +24,17 @@ else {
 }
 
 # Register helper functions
-Set-Item function:global:Invoke-Manage {
-    . $PSScriptRoot\Invoke-Manage.ps1 @args
-} -Force
-
-Set-Item function:global:Invoke-Fabric {
-    . $PSScriptRoot\Invoke-Fabric.ps1 @args
+Set-Item function:global:Invoke-Ng {
+    . $PSScriptRoot\Invoke-Ng.ps1 @args
 } -Force
 
 Set-Item function:global:Start-Server {
-    Invoke-Manage runserver @args
+    param([switch]$OpenBrowser)
+    $open = ""
+    if ($OpenBrowser) {
+        $open = "--open"
+    }
+    Invoke-Ng serve $open
 } -Force
 
 Set-Item function:global:Update-DevEnvironment {
