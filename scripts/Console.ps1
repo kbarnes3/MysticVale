@@ -58,7 +58,7 @@ Set-Item function:global:Publish-GitHubPages {
     Push-Location $node_root
     $params = ""
     if ($CommitMessage) {
-        $params = "--message $CommitMessage"
+        $params = "--message ""$CommitMessage"""
     }
     & ngh $params
     Pop-Location
