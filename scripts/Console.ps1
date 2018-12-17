@@ -23,8 +23,6 @@ else {
     . $PSScriptRoot\Setup.ps1
 }
 
-. $PSScriptRoot\Ensure-Venv.ps1 | Out-Null
-
 # Register helper functions
 Set-Item function:global:Invoke-Manage {
     . $PSScriptRoot\Invoke-Manage.ps1 @args
@@ -43,4 +41,4 @@ Set-Item function:global:Update-DevEnvironment {
     . $PSScriptRoot\Update.ps1 -Verbose:$Verbose
 } -Force
 
-Write-Status "NewDjangoSite ready"
+Write-Status "Mystic Vale ready"

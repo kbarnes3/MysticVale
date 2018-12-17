@@ -13,26 +13,13 @@ else {
 }
 
 $project_root = Split-Path $PSScriptRoot
+$node_root = Join-Path $project_root "mystic-vale"
 
-Push-Location $project_root
+Push-Location $node_root
 
-$venv = Join-Path $project_root "venv"
-if (-Not (Test-Path $venv)) {
-    Write-Status "Creating venv in $venv"
-    & py -3.6 -m venv $venv
-}
-
-$already_activated = . $PSScriptRoot\Ensure-Venv.ps1
-
-Write-Status "Updating pip"
-& python -m pip install --upgrade pip $quiet
+Write-Status "Updating npm"
+& npm install -g npm $quiet
 Write-Status "Updating requirements"
-& pip install -r (Join-Path $project_root "requirements.txt") $quiet
-Write-Status "Updating dev-requirements"
-& pip install -r (Join-Path $project_root "dev-requirements.txt") $quiet
+& npm install $quiet
 
 Pop-Location
-
-if (-Not $already_activated) {
-    deactivate
-}
