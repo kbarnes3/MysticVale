@@ -24,6 +24,10 @@ else {
 }
 
 # Register helper functions
+Set-Item function:global:Invoke-Npm {
+    . $PSScriptRoot\Invoke-Npm.ps1 @args
+} -Force
+
 Set-Item function:global:Invoke-Ng {
     . $PSScriptRoot\Invoke-Ng.ps1 @args
 } -Force
@@ -37,9 +41,24 @@ Set-Item function:global:Start-Server {
     Invoke-Ng serve $open
 } -Force
 
+Set-Item function:global:Invoke-Build {
+    Invoke-Npm run-script build
+}
+
 Set-Item function:global:Update-DevEnvironment {
     param([switch]$Verbose)
     . $PSScriptRoot\Update.ps1 -Verbose:$Verbose
+} -Force
+
+Set-Item function:global:Publish-GitHubPages {
+    param([string]$CommitMessage)
+    Push-Location $node_root
+    $params = ""
+    if ($CommitMessage) {
+        $params = "--message $CommitMessage"
+    }
+    & ngh $params
+    Pop-Location
 } -Force
 
 Write-Status "Mystic Vale ready"
