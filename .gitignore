@@ -1,10 +1,10 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/dist-server
-/tmp
-/out-tsc
+mystic-vale/dist
+mystic-vale/dist-server
+mystic-vale/tmp
+mystic-vale/out-tsc
 
 # dependencies
 node_modules
