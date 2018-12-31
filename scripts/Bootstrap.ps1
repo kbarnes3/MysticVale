@@ -15,8 +15,7 @@ else {
 Write-Status "Updating npm"
 . $PSScriptRoot\Invoke-Npm install -g npm $quiet
 Write-Status "Updating Angular CLI"
-. $PSScriptRoot\Invoke-Npm install -g npm $quiet
+. $PSScriptRoot\Invoke-Npm install -g @angular/cli $quiet
 Write-Status "Updating requirements"
-. $PSScriptRoot\Invoke-Npm install -g npm $quiet
+. $PSScriptRoot\Invoke-Npm install $quiet
 
-Pop-Location
