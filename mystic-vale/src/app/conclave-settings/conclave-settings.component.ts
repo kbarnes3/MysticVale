@@ -6,7 +6,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./conclave-settings.component.css']
 })
 export class ConclaveSettingsComponent implements OnInit {
-  @ViewChild('conclaveSelection') conclaveList;
+  @ViewChild('conclaveSelection', { static: true }) conclaveList;
 
   constructor() { }
 
