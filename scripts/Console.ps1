@@ -29,16 +29,17 @@ Set-Item function:global:Invoke-Npm {
 } -Force
 
 Set-Item function:global:Invoke-Ng {
-    . $PSScriptRoot\Invoke-Ng.ps1 @args
+    param($NgArgs)
+    . $PSScriptRoot\Invoke-Ng.ps1 $NgArgs
 } -Force
 
 Set-Item function:global:Start-Server {
     param([switch]$OpenBrowser)
-    $open = ""
+    $ngArgs = @("serve")
     if ($OpenBrowser) {
-        $open = "--open"
+        $ngArgs += "--open"
     }
-    Invoke-Ng serve $open
+    Invoke-Ng $ngArgs
 } -Force
 
 Set-Item function:global:Invoke-Build {
