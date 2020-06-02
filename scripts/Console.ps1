@@ -51,19 +51,4 @@ Set-Item function:global:Update-DevEnvironment {
     . $PSScriptRoot\Update.ps1 -Verbose:$Verbose
 } -Force
 
-Set-Item function:global:Publish-GitHubPages {
-    param([string]$CommitMessage)
-
-    $project_root = Split-Path $PSScriptRoot
-    $node_root = Join-Path $project_root "mystic-vale"
-    Push-Location $node_root
-    $params = ""
-    if ($CommitMessage) {
-        $params = "--message ""$CommitMessage"""
-    }
-    & ngh $params
-    Pop-Location
-
-} -Force
-
 Write-Status "Mystic Vale ready"
