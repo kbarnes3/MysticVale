@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ConclaveSelectionComponent } from './conclave-selection.component';
 
@@ -6,7 +6,7 @@ describe('ConclaveSelectionComponent', () => {
   let component: ConclaveSelectionComponent;
   let fixture: ComponentFixture<ConclaveSelectionComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ConclaveSelectionComponent ]
     })
