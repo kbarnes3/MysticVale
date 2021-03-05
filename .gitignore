@@ -5,6 +5,7 @@ mystic-vale/dist
 mystic-vale/dist-server
 mystic-vale/tmp
 mystic-vale/out-tsc
+mystic-vale/git-version.json
 
 # dependencies
 node_modules
