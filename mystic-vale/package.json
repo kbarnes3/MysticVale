@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
+    "start": "node git-version.js && ng serve",
+    "build": "node git-version.js && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -20,7 +20,9 @@
     "@angular/platform-browser": "^11.2.4",
     "@angular/platform-browser-dynamic": "^11.2.4",
     "@angular/router": "^11.2.4",
+    "@types/webpack-env": "^1.16.0",
     "core-js": "^3.9.1",
+    "git-describe": "^4.0.4",
     "rxjs": "^6.6.6",
     "tslib": "^2.1.0",
     "zone.js": "~0.10.3"
