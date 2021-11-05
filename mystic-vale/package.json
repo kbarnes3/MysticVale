@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node git-version.js && ng serve",
-    "build": "node git-version.js && ng build --configuration production",
+    "build": "node git-version.js && ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
