@@ -86,19 +86,14 @@
               "src/assets"
             ]
           }
-        }
-      }
-    },
-    "mystic-vale-e2e": {
-      "root": "e2e/",
-      "sourceRoot": "",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "mystic-vale:serve"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
@@ -115,6 +110,7 @@
     }
   },
   "cli": {
-    "analytics": "a3c4abea-2187-4e5a-a2b9-972f695b3d68"
+    "analytics": "a3c4abea-2187-4e5a-a2b9-972f695b3d68",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
