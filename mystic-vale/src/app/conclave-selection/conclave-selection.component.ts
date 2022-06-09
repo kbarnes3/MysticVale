@@ -7,14 +7,11 @@ import { ConclaveService } from '../conclave.service';
   templateUrl: './conclave-selection.component.html',
   styleUrls: ['./conclave-selection.component.css']
 })
-export class ConclaveSelectionComponent implements OnInit {
+export class ConclaveSelectionComponent {
 
   constructor(private conclaveService: ConclaveService) { }
 
   conclaveSelection: Conclave[];
-
-  ngOnInit() {
-  }
 
   generateListOfConclaves(numberOfConclaves: number) {
     this.conclaveSelection = this.conclaveService.generateConclaveSelection(numberOfConclaves);
