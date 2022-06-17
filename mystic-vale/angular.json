@@ -99,7 +99,6 @@
       }
     }
   },
-  "defaultProject": "mystic-vale",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
@@ -111,6 +110,8 @@
   },
   "cli": {
     "analytics": "a3c4abea-2187-4e5a-a2b9-972f695b3d68",
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
