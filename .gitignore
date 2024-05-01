@@ -10,6 +10,7 @@ mystic-vale/git-version.json
 
 # dependencies
 node_modules
+.nx
 
 # IDEs and editors
 /.idea
