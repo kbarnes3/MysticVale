@@ -6,7 +6,6 @@
     "types": ["webpack-env"]
   },
   "files": [
-    "main.ts",
-    "polyfills.ts"
+    "main.ts"
   ]
 }
