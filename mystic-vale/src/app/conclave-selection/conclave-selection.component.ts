@@ -6,7 +6,7 @@ import { ConclaveService } from '../conclave.service';
     selector: 'app-conclave-selection',
     templateUrl: './conclave-selection.component.html',
     styleUrls: ['./conclave-selection.component.css'],
-    standalone: false
+    
 })
 export class ConclaveSelectionComponent {
 

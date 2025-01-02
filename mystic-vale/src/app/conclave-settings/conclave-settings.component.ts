@@ -4,7 +4,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
     selector: 'app-conclave-settings',
     templateUrl: './conclave-settings.component.html',
     styleUrls: ['./conclave-settings.component.css'],
-    standalone: false
+    
 })
 export class ConclaveSettingsComponent implements OnInit {
   @ViewChild('conclaveSelection', { static: true }) conclaveList;
