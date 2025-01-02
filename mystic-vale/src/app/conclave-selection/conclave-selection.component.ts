@@ -3,9 +3,10 @@ import { Conclave } from '../conclave';
 import { ConclaveService } from '../conclave.service';
 
 @Component({
-  selector: 'app-conclave-selection',
-  templateUrl: './conclave-selection.component.html',
-  styleUrls: ['./conclave-selection.component.css']
+    selector: 'app-conclave-selection',
+    templateUrl: './conclave-selection.component.html',
+    styleUrls: ['./conclave-selection.component.css'],
+    standalone: false
 })
 export class ConclaveSelectionComponent {
 
