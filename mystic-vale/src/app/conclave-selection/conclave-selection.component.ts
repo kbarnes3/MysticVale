@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Conclave } from '../conclave';
 import { ConclaveService } from '../conclave.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-conclave-selection',
+    imports: [CommonModule],
     templateUrl: './conclave-selection.component.html',
     styleUrls: ['./conclave-selection.component.css'],
     
