@@ -1,9 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ConclaveSelectionComponent } from '../conclave-selection/conclave-selection.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-conclave-settings',
-  templateUrl: './conclave-settings.component.html',
-  styleUrls: ['./conclave-settings.component.css']
+    selector: 'app-conclave-settings',
+    imports: [FormsModule, ConclaveSelectionComponent],
+    templateUrl: './conclave-settings.component.html',
+    styleUrls: ['./conclave-settings.component.css'],
+    
 })
 export class ConclaveSettingsComponent implements OnInit {
   @ViewChild('conclaveSelection', { static: true }) conclaveList;
