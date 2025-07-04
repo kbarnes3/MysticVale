@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Conclave } from '../conclave';
 import { ConclaveService } from '../conclave.service';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-conclave-selection',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './conclave-selection.component.html',
     styleUrls: ['./conclave-selection.component.css'],
     
 })
 export class ConclaveSelectionComponent {
+  private conclaveService = inject(ConclaveService);
 
-  constructor(private conclaveService: ConclaveService) { }
 
   conclaveSelection: Conclave[];
 
