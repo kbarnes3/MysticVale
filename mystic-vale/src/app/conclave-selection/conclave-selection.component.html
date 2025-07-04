@@ -1,6 +1,10 @@
-<h2 *ngIf="conclaveSelection">Selected conclaves</h2>
+@if (conclaveSelection) {
+  <h2>Selected conclaves</h2>
+}
 <ul>
-  <li *ngFor="let conclave of conclaveSelection">
-    {{ conclave.name }}
-  </li>
+  @for (conclave of conclaveSelection; track conclave) {
+    <li>
+      {{ conclave.name }}
+    </li>
+  }
 </ul>
