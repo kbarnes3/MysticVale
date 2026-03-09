@@ -12,9 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class ConclaveSettingsComponent implements OnInit {
   @ViewChild('conclaveSelection', { static: true }) conclaveList;
 
-  constructor() { }
-
-  numberOfConclaves: number = 6;
+  numberOfConclaves = 6;
 
   ngOnInit() {
     this.onGenerate();

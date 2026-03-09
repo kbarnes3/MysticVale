@@ -5,9 +5,6 @@ import { NUMBER_OF_REQUIRED_CONCLAVES, REQUIRED_CONCLAVES, EXTRA_CONCLAVES } fro
 @Injectable()
 export class ConclaveService {
 
-  constructor() { }
-
-
   randNumber(max: number): number {
     return Math.floor(Math.random() * max);
   }
