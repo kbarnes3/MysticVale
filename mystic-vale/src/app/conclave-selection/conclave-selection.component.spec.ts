@@ -1,17 +1,19 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConclaveSelectionComponent } from './conclave-selection.component';
+import { ConclaveService } from '../conclave.service';
 
 describe('ConclaveSelectionComponent', () => {
   let component: ConclaveSelectionComponent;
   let fixture: ComponentFixture<ConclaveSelectionComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ConclaveSelectionComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ConclaveSelectionComponent],
+      providers: [ConclaveService],
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ConclaveSelectionComponent);

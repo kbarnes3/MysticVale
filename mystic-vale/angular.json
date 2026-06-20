@@ -20,13 +20,9 @@
               "@angular/localize/init",
               "zone.js"
             ],
-            "assets": [
-              "src/assets"
-            ],
+            "assets": [],
             "styles": [
-              "src/assets/css/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/font-awesome/css/font-awesome.min.css",
+              "src/styles.scss",
               "node_modules/github-fork-ribbon-css/gh-fork-ribbon.css"
             ],
             "scripts": [],
@@ -87,11 +83,9 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/assets/css/styles.css"
+              "src/styles.scss"
             ],
-            "assets": [
-              "src/assets"
-            ]
+            "assets": []
           }
         },
         "lint": {
