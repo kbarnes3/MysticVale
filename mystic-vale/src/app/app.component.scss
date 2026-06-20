@@ -1,0 +1,68 @@
+.app-toolbar {
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  .mat-mdc-button,
+  .mat-mdc-icon-button {
+    --mdc-text-button-label-text-color: var(--mat-sys-on-primary);
+    --mat-icon-button-state-layer-color: var(--mat-sys-on-primary);
+    color: var(--mat-sys-on-primary);
+  }
+}
+
+.app-brand {
+  font-weight: 500;
+}
+
+.toolbar-spacer {
+  flex: 1;
+}
+
+.main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px 16px 0;
+}
+
+.setup-table {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 16px;
+  background: transparent;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-top: 100px;
+  color: var(--mat-sys-on-surface-variant);
+  text-align: center;
+  border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.github-fork-ribbon.right-top {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .github-fork-ribbon.right-top {
+    display: block;
+  }
+
+  .footer {
+    text-align: left;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

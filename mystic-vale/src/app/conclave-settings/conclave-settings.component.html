@@ -1,17 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 offset-md-4">
-      <div class="input-group">
-        <select class="custom-select" [(ngModel)]="numberOfConclaves" (ngModelChange)="onNumberChanged()">
-          <option value="6">6 Conclaves (2-4 Players)</option>
-          <option value="7">7 Conclaves</option>
-          <option value="8">8 Conclaves (5-6 Players)</option>
-        </select>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" (click)="onGenerate()">Generate</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="conclave-settings">
+  <mat-form-field appearance="outline" class="conclave-count">
+    <mat-label>Conclaves</mat-label>
+    <mat-select [(ngModel)]="numberOfConclaves" (ngModelChange)="onNumberChanged()">
+      <mat-option [value]="6">6 Conclaves (2-4 Players)</mat-option>
+      <mat-option [value]="7">7 Conclaves</mat-option>
+      <mat-option [value]="8">8 Conclaves (5-6 Players)</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-stroked-button type="button" (click)="onGenerate()">Generate</button>
 </div>
 <app-conclave-selection #conclaveSelection></app-conclave-selection>

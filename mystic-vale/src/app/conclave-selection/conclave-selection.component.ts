@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { MatListModule } from '@angular/material/list';
 import { Conclave } from '../conclave';
 import { ConclaveService } from '../conclave.service';
 
 
 @Component({
     selector: 'app-conclave-selection',
-    imports: [],
+    imports: [MatListModule],
     templateUrl: './conclave-selection.component.html',
     styleUrls: ['./conclave-selection.component.css'],
     

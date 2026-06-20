@@ -1,0 +1,12 @@
+.conclave-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+}
+
+.conclave-count {
+  min-width: 260px;
+}

@@ -1,54 +1,36 @@
-<!-- Fixed navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <div class="container">
-    <span class="navbar-brand">{{ title }}</span>
-  </div>
-</nav>
+<mat-toolbar class="app-toolbar">
+  <span class="app-brand">{{ title }}</span>
+  <span class="toolbar-spacer"></span>
+  <app-theme-switcher></app-theme-switcher>
+</mat-toolbar>
 
-<div class="container main-container">
+<div class="main-container">
   <app-conclave-settings></app-conclave-settings>
-  <h2>Setup quick reference</h2>
-  <table class="table table-sm">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Players</th>
-        <th scope="col">VPs</th>
-        <th scope="col">L1 Advancements</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">2</th>
-        <td>23</td>
-        <td>12</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>28</td>
-        <td>15</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>33</td>
-        <td>18</td>
-      </tr>
-      <tr>
-        <th scope="row">5</th>
-        <td>40</td>
-        <td>24</td>
-      </tr>
-      <tr>
-        <th scope="row">6</th>
-        <td>47</td>
-        <td>30</td>
-      </tr>
-    </tbody>
-  </table>
-</div> <!-- /container -->
 
-<a class="github-fork-ribbon right-top d-none d-md-block" href="https://github.com/kbarnes3/MysticVale" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+  <h2>Setup quick reference</h2>
+  <table mat-table [dataSource]="setupReference" class="setup-table">
+    <ng-container matColumnDef="players">
+      <th mat-header-cell *matHeaderCellDef>Players</th>
+      <td mat-cell *matCellDef="let row">{{ row.players }}</td>
+    </ng-container>
+    <ng-container matColumnDef="vps">
+      <th mat-header-cell *matHeaderCellDef>VPs</th>
+      <td mat-cell *matCellDef="let row">{{ row.vps }}</td>
+    </ng-container>
+    <ng-container matColumnDef="advancements">
+      <th mat-header-cell *matHeaderCellDef>L1 Advancements</th>
+      <td mat-cell *matCellDef="let row">{{ row.advancements }}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="setupColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: setupColumns"></tr>
+  </table>
+</div>
+
+<!-- If you don't need this ribbon, you can also uninstall the github-fork-ribbon-css npm package -->
+<!-- The color for this ribbon is overridden in styles.scss -->
+<a class="github-fork-ribbon right-top" href="https://github.com/kbarnes3/MysticVale" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 <footer class="footer" role="contentinfo">
-  <div class="container">
+  <div class="footer-inner">
     <p>&copy; 2018-2026 Kevin Barnes</p>
     <p>Built from version {{ gitVersion }}</p>
   </div>

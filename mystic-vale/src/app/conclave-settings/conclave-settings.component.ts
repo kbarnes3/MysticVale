@@ -1,10 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConclaveSelectionComponent } from '../conclave-selection/conclave-selection.component';
 import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'app-conclave-settings',
-    imports: [FormsModule, ConclaveSelectionComponent],
+    imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatButtonModule, ConclaveSelectionComponent],
     templateUrl: './conclave-settings.component.html',
     styleUrls: ['./conclave-settings.component.css'],
     
