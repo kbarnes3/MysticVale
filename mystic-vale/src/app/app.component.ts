@@ -3,6 +3,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { versionInfo } from './version-info';
 import { ConclaveSettingsComponent } from './conclave-settings/conclave-settings.component';
+import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
 interface SetupReference {
   players: number;
@@ -12,7 +13,7 @@ interface SetupReference {
 
 @Component({
     selector: 'app-root',
-    imports: [ConclaveSettingsComponent, MatToolbarModule, MatTableModule],
+    imports: [ConclaveSettingsComponent, ThemeSwitcherComponent, MatToolbarModule, MatTableModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
