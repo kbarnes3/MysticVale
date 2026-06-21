@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ConclaveSettingsComponent } from './conclave-settings.component';
 import { ConclaveService } from '../conclave.service';
@@ -9,7 +8,7 @@ describe('ConclaveSettingsComponent interaction', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConclaveSettingsComponent, NoopAnimationsModule],
+      imports: [ConclaveSettingsComponent],
       providers: [ConclaveService],
     }).compileComponents();
 
