@@ -1,7 +1,7 @@
-@if (conclaveSelection) {
+@if (conclaveSelection(); as conclaves) {
   <h2>Selected conclaves</h2>
   <mat-list>
-    @for (conclave of conclaveSelection; track conclave) {
+    @for (conclave of conclaves; track conclave.name) {
       <mat-list-item>{{ conclave.name }}</mat-list-item>
     }
   </mat-list>

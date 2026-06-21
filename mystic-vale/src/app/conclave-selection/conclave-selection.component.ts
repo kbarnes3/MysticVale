@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { Conclave } from '../conclave';
 import { ConclaveService } from '../conclave.service';
@@ -15,10 +15,10 @@ export class ConclaveSelectionComponent {
   private conclaveService = inject(ConclaveService);
 
 
-  conclaveSelection: Conclave[];
+  conclaveSelection = signal<Conclave[] | undefined>(undefined);
 
   generateListOfConclaves(numberOfConclaves: number) {
-    this.conclaveSelection = this.conclaveService.generateConclaveSelection(numberOfConclaves);
+    this.conclaveSelection.set(this.conclaveService.generateConclaveSelection(numberOfConclaves));
   }
 
 }
