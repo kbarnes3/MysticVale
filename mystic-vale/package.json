@@ -2,7 +2,7 @@
   "name": "mystic-vale",
   "version": "0.0.0",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "^24.15.0 || >=26.0.0"
   },
   "license": "MIT",
   "scripts": {
@@ -47,5 +47,13 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0",
     "vitest": "^4.1.10"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "@parcel/watcher": false,
+    "core-js": false,
+    "fsevents": false,
+    "lmdb": false,
+    "msgpackr-extract": false
   }
 }
